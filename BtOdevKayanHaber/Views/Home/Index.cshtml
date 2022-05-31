@@ -1,0 +1,66 @@
+﻿@model List<Haber>;
+@{
+	Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta name="viewport" content="width=device-width" />
+	<title>Index</title>
+	<script src="~/lib/jquery/dist/jquery.js"></script>
+	<script src="~/js/Index.js"></script>
+	<style>
+		#container {
+			margin: 200px auto 0px auto;
+			width: 550px;
+			height: 30px;
+			border: 1px solid #808080;
+			overflow: hidden;
+			border-radius: 5px;
+		}
+
+		.namebox {
+			padding: 5px;
+			height: 20px;
+		}
+	</style>
+</head>
+<body>
+	<div id="container">
+
+		<div id="haberSlider">
+			@foreach (var item in Model)
+			{
+				<div class="namebox">
+					@item.baslik : @item.yazi - @item.tarih.ToString("dd/MM/yy")
+				</div>
+			}
+			<div id="r"></div>
+		</div>
+
+
+
+
+		@*<div id="haberSlider">
+		<div class="namebox">
+		Haber 1 : C# Programlama dilini öğrendik... Artık c# dilini biliyoruz.
+		</div>
+		<div class="namebox">
+		Haber 2 : Sql Server Öğrendik. Hepimiz birer DBA'yiz..
+		</div>
+		<div class="namebox">
+		Haber 3 : EF Core Örendik. Artık veritabanı ile sqli bağlıyoruz.
+		</div>
+		<div class="namebox">
+		Haber 4 : Ve nihayet webteyiz. Hatta Asp.Net Core öğreneceğiz.
+		</div>
+		<div class="namebox">
+		Haber 5 : Hoca dapperda anlatacakmış.
+		</div>
+		<div id="r"></div>
+		</div>*@
+	</div>
+</body>
+</html>
